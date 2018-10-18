@@ -1,0 +1,39 @@
+#include<iostream>
+
+using namespace std;
+
+int main(){
+    int n;
+    int x;
+    int y;
+    int setPrecision;
+    cin>>n;
+
+    int*arr;
+    float m;
+    arr=new int[n];
+
+    cout<<setPrecision<<fixed;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+        x=arr[i];
+        y=i-1;
+        while(arr[y]>x&&y>=0){
+            arr[y+1]=arr[y];
+            y--;
+        }
+        arr[y+1]=x;
+
+        int n1=i+1;
+        if(n1%2==0){
+            float p=arr[n1/2];
+            float q=arr[(n1/2)-1];
+            m=(p+q)/2;
+        }
+        else{
+            m=arr[n1/2];
+        }
+        cout<<m<<endl;
+    }
+    return m;
+}
